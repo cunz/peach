@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=0" />
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title th:text="${party.partyName}" />
+
+<!-- Bootstrap -->
+
+<!--link href="css/bootstrap.min.css" rel="stylesheet"-->
+<!-- 引入 WeUI -->
+<!-- <link rel="stylesheet"
+	href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css" /> -->
+<link href="/assets/css/weui-style.css" rel="stylesheet" />
+<link href="/assets/css/wx-style.css" rel="stylesheet" />
+<link href="/assets/css/iconfont.css" rel="stylesheet" />
+<!-- hcs -->
+<link href="/assets/css/iconfont-second.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="/assets/css/swiper.min.css" />
+<link rel="stylesheet" href="/assets/css/lunbo.css" />
+<link rel="stylesheet" href="/assets/css/weui.min.css" />
+
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div class="weui-toptips weui-toptips_warn js_tooltips">错误提示</div>
+
+	<div class="container">
+
+		<div class="page js_show">
+
+			<div class="page__bd" style="height: 100%;">
+
+				<div class="weui-tab">
+					<div class="weui-tab__panel">
+						<!-- 轮播图开始 -->
+						<div class=" swiper-container swiper-container1">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide swiper-slide1">
+									<a href="http://www.i3teamworks.cn/i3tw/web/register.html"><img
+										src="/assets/img/index-head-img.jpg" style="width:100%;" class="img_cover" /></a>
+								</div>
+
+							</div>
+							<!-- Add Pagination -->
+							<!--div class="swiper-pagination"></div-->
+							<!-- Add Arrows -->
+
+						</div>
+						<div class=" swiper-container swiper-container1">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide swiper-slide1">
+									<a href="#"><img
+										src="/assets/img/head-take-turns.png" style="width:100%;" class="img_cover" /></a>
+								</div>
+
+							</div>
+							<!-- Add Pagination -->
+							<!--div class="swiper-pagination"></div-->
+							<!-- Add Arrows -->
+
+						</div>
+						<!-- 轮播图结束 -->
+
+
+						<div class="page__bd page__bd_spacing">
+							<div class="weui-cells"
+								style="position: relative; top: -53px; z-index: 9999;"
+								th:include="wx/common::header">
+								<!--img class="weui_avatar" src="https://team.weui.io/avatar/bear.jpg" alt=""-->
+							</div>
+							<div style="position: relative; top: -60px;">
+								<div class="weui-cells">
+									<div class="weui-cell">
+										<div class="weui-cells__title"
+											style="border-left: 5px solid #366077; padding-left: 20px; color: #666666;">日常办公</div>
+									</div>
+									<div class="weui-grids">
+										<a th:href="${'/'+prefix+'/attendance/wx/clock/main'}"
+											class="weui-grid">
+											<div class="weui-grid__icon">
+												<!--  img src="/img/icon_tabbar.png" alt=""/-->
+												<i class="iconfont icon-daqia second-icon"
+													style="font-size: 28px;"></i>
+											</div>
+											<p class="weui-grid__label">打卡</p>
+										</a> <a th:href="${'/'+prefix+'/attendance/wx/leave/create'}"
+											class="weui-grid">
+											<div class="weui-grid__icon">
+												<!--  img src="/img/icon_tabbar.png" alt=""/-->
+												<i class="iconfont icon-qingjia second-icon"
+													style="font-size: 28px;"></i>
+											</div>
+											<p class="weui-grid__label">请假</p>
+										</a> <a th:href="${'/wx/attendance/check/main'}"
+											class="weui-grid">
+											<div class="weui-grid__icon">
+												<!--  img src="/img/icon_tabbar.png" alt=""/-->
+												<i class="iconfont icon-tubiao901 second-icon"
+													style="font-size: 28px;"></i>
+											</div>
+											<p class="weui-grid__label">签到</p>
+										</a> <a th:href="${'/'+prefix+'/attendance/wxreporte'}"
+											class="weui-grid">
+											<div class="weui-grid__icon">
+												<!--  img src="/img/icon_tabbar.png" alt=""/-->
+												<i class="iconfont icon-kaoqin second-icon"
+													style="font-size: 28px;"></i>
+											</div>
+											<p class="weui-grid__label">考勤</p>
+										</a>
+									</div>
+								</div>
+
+
+								<!-- <div class="weui-cells__title" style="color: #666666">CRM管理</div> -->
+								<div class="weui-cells">
+									<div class="weui-cell">
+										<div class="weui-cells__title"
+											style="border-left: 5px solid #366077; padding-left: 20px; color: #666666;">CRM管理</div>
+									</div>
+									<div class="weui-grids">
+										<a th:href="${'/wx/crm/event/list?access-token=85225163532b489eab686075bff87005'}"
+											class="weui-grid">
+											<div class="weui-grid__icon">
+												<!--  img src="/img/icon_tabbar.png" alt=""/-->
+												<i class="iconfont icon-baifang second-icon"
+													style="font-size: 28px;"></i>
+											</div>
+											<p class="weui-grid__label">拜访</p>
+										</a>
+									</div>
+								</div>
+
+								<!-- 	<div class="weui-cells__title" style="color: #666666">商城</div> -->
+								<div class="weui-cells">
+									<div class="weui-cell">
+										<div class="weui-cells__title"
+											style="border-left: 5px solid #366077; padding-left: 20px; color: #666666;">商城</div>
+									</div>
+									<div class="weui-grids">
+
+										<a th:href="${'/'+prefix+'/mall/wx/entrance'}"
+											class="weui-grid">
+											<div class="weui-grid__icon">
+												<!--  img src="/img/icon_tabbar.png" alt=""/-->
+												<i class="iconfont icon-shangpin1 second-icon"
+													style="font-size: 28px;"></i>
+											</div>
+											<p class="weui-grid__label">在线下单</p>
+										</a> <a th:href="${'/admin/oos/entrance'}"
+											class="weui-grid">
+											<div class="weui-grid__icon">
+												<!--  img src="/img/icon_tabbar.png" alt=""/-->
+												<i class="iconfont icon-shangpin1 second-icon"
+													style="font-size: 28px;"></i>
+											</div>
+											<p class="weui-grid__label">商品</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="weui-tabbar">
+
+						<a th:href="${'/'+prefix+'/wx/entrance'}"
+							class="weui-tabbar__item weui-bar__item_on"> <span
+							style="display: inline-block; position: relative;"> <!--  img src="/img/icon_tabbar.png" alt="" class="weui-tabbar__icon"/-->
+								<i class="iconfont icon-activity menu-icon"
+								style="font-size: 27px; color: #089ea8;"></i> <!--  span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span-->
+						</span>
+							<p class="weui-tabbar__label">工作</p> <a
+							th:href="${'/'+prefix+'/wx/colleague/list'}"
+							class="weui-tabbar__item"> <img
+								src="/assets/img/college-icon.png" alt=""
+								class="weui-tabbar__icon" /> <!-- <i class="iconfont icon-colleage menu-icon"
+							style="font-size: 27px;"></i> -->
+								<p class="weui-tabbar__label">同事</p>
+						</a>
+						</a> <a href="javascript:;" class="weui-tabbar__item develop"> <span
+							style="display: inline-block; position: relative;"> <!--  img src="/img/icon_tabbar.png" alt="" class="weui-tabbar__icon"/-->
+								<!-- 	<img src="/assets/img/message-icon.png" alt="" class="weui-tabbar__icon"/> -->
+								<i class="iconfont icon-message menu-icon"
+								style="font-size: 27px;"></i> <!--  span class="weui-badge" style="position: absolute;top: -2px;right: -13px;">8</span-->
+						</span>
+							<p class="weui-tabbar__label">消息</p>
+						</a> <a th:href="${'/'+prefix+'/wx/customer/list'}"
+							class="weui-tabbar__item"> <!--  img src="/img/icon_tabbar.png" alt="" class="weui-tabbar__icon"/-->
+							<i class="iconfont icon-hezuoguanxi-xianxing menu-icon"
+							style="font-size: 27px;"></i>
+							<p class="weui-tabbar__label">客户</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<!--script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script-->
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<!--script src="js/bootstrap.min.js"></script-->
+
+	<script src="/assets/js/zepto.min.js"></script>
+	<script src="/assets/js/swiper.min.js"></script>
+	<script type="text/javascript"
+		src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript"
+		src="https://res.wx.qq.com/open/libs/weuijs/1.1.2/weui.min.js"></script>
+
+	<script th:inline="javascript">
+   $('.develop').each(function(){
+      $(this).on('click',function(){
+    	 weui.alert("开发中");
+      });
+   });
+   var host = window.location.host;
+   var pathPrefix = [[${prefix}]];
+   $(document).ready(function(e) {
+       var counter = 0;
+       /*<![CDATA[*/
+       if (window.history && window.history.pushState) {
+                        $(window).on('popstate', function () {
+                                       window.history.pushState('forward', null, '#');
+                                       window.history.forward(1);
+                                       window.location.href="http://"+host+"/"+pathPrefix+"/wx/entrance";
+                           });
+         }
+      /*]]>*/
+         window.history.pushState('forward', null, '#'); //在IE中必须得有这两行
+         window.history.forward(1);
+  });
+   </script>
+	<script>
+   /*<![CDATA[*/
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+
+     /*  pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      }, */
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+    /*]]>*/
+  </script>
+</body>
+</html>
